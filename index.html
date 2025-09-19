@@ -1,14 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Meta Tags de Base -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mido Fortified Food - Nutrition et Développement Local au Burundi</title>
-    <meta name="description" content="Mido Fortified Food produit des aliments enrichis pour lutter contre la malnutrition au Burundi. Nous soutenons le développement local et les communautés agricoles.">
+
+    <!-- SEO Principal -->
+    <title>Mido Fortified Food - Aliments Enrichis & Nutrition au Burundi | Lutte contre la Malnutrition</title>
+    <meta name="description" content="Mido Fortified Food produit des aliments enrichis de qualité pour combattre la malnutrition au Burundi. Nous soutenons 12 partenaires, 5000+ familles et le développement local à Bujumbura.">
+    <meta name="keywords" content="aliments enrichis, malnutrition, nutrition, Burundi, Bujumbura, développement local, sécurité alimentaire, santé infantile, agriculture, partenariats ONG">
+    <meta name="author" content="Mido Fortified Food">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- Géolocalisation -->
+    <meta name="geo.region" content="BI-BM">
+    <meta name="geo.placename" content="Bujumbura, Burundi">
+    <meta name="geo.position" content="-3.384600191050171;29.35951149502306">
+    <meta name="ICBM" content="-3.384600191050171, 29.35951149502306">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mido Fortified Food - Aliments Enrichis & Nutrition au Burundi">
+    <meta property="og:description" content="Producteur d'aliments enrichis pour lutter contre la malnutrition au Burundi. 12 partenaires, 5000+ familles aidées, développement local durable.">
+    <meta property="og:image" content="logomido.jpg">
+    <meta property="og:url" content="https://midowebsite.vercel.app/">
+    <meta property="og:site_name" content="Mido Fortified Food">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mido Fortified Food - Aliments Enrichis & Nutrition au Burundi">
+    <meta name="twitter:description" content="Producteur d'aliments enrichis pour lutter contre la malnutrition au Burundi. 12 partenaires, 5000+ familles aidées.">
+    <meta name="twitter:image" content="logomido.jpg">
+
+    <!-- Liens Canoniques et Langues -->
+    <link rel="canonical" href="https://midowebsite.vercel.app/">
+    <link rel="alternate" hreflang="fr" href="https://midowebsite.vercel.app/">
+    <link rel="alternate" hreflang="en" href="https://midowebsite.vercel.app/">
+
+    <!-- Favicon et PWA -->
+    <link rel="icon" type="image/jpeg" href="logomido.jpg">
+    <link rel="apple-touch-icon" href="logomido.jpg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#196444">
+
+    <!-- Preconnect pour Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Mido Fortified Food",
+        "description": "Producteur d'aliments enrichis pour lutter contre la malnutrition au Burundi",
+        "url": "https://midowebsite.vercel.app/,
+        "logo": "https://midowebsite.vercel.app/logomido.jpg",
+        "foundingDate": "2024",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Quartier Asiatique, avenue des paysans, Immeuble Goûte du ciel N°4",
+            "addressLocality": "Bujumbura",
+            "addressRegion": "Rohero",
+            "addressCountry": "BI"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-3.384600191050171",
+            "longitude": "29.35951149502306"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+257-79-964-853",
+            "email": "midofortifiedfood@gmail.com",
+            "contactType": "customer service",
+            "availableLanguage": ["French", "Kirundi"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/midofortifiedfood",
+            "https://www.linkedin.com/company/midofortifiedfood"
+        ],
+        "industry": "Food Production",
+        "areaServed": "Burundi",
+        "keywords": "aliments enrichis, malnutrition, nutrition, développement local, Burundi"
+    }
+    </script>
+
+    <!-- Google Analytics (à remplacer par votre ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -81,7 +174,7 @@
                     <a href="#about" class="cta-button">Découvrir notre mission</a>
                 </div>
                 <div class="hero-image">
-                    <div class="hero-placeholder">
+                    <div class="hero-placeholder" role="img" aria-label="Aliments enrichis et enfants en bonne santé - Illustration du travail de Mido Fortified Food au Burundi">
                         <p>Image: Aliments enrichis / Enfants en bonne santé</p>
                     </div>
                 </div>
