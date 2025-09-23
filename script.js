@@ -400,6 +400,123 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize performance monitoring
     logPerformanceMetrics();
 
+    // Image Carousel Functionality
+    function initCarousel() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        // Check image loading and manage placeholders
+        function checkImageLoading() {
+            const images = document.querySelectorAll('.carousel-slide img');
+            images.forEach((img, index) => {
+                const placeholder = img.nextElementSibling;
+
+                // Function to hide placeholder when image loads
+                function onImageLoad() {
+                    if (placeholder) {
+                        placeholder.style.display = 'none';
+                    }
+                    img.style.display = 'block';
+                }
+
+                // Function to show placeholder when image fails
+                function onImageError() {
+                    img.style.display = 'none';
+                    if (placeholder) {
+                        placeholder.style.display = 'flex';
+                    }
+                }
+
+                // If image is already loaded successfully
+                if (img.complete && img.naturalHeight > 0) {
+                    onImageLoad();
+                } else if (img.complete && img.naturalHeight === 0) {
+                    onImageError();
+                } else {
+                    // Image is still loading
+                    img.onload = onImageLoad;
+                    img.onerror = onImageError;
+
+                    // Timeout fallback after 5 seconds
+                    setTimeout(() => {
+                        if (!img.complete || img.naturalHeight === 0) {
+                            onImageError();
+                        }
+                    }, 5000);
+                }
+            });
+        }
+
+        // Initialize image loading check
+        checkImageLoading();
+
+        // Auto-play carousel
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        // Manual navigation through dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                if (index !== currentSlide) {
+                    slides[currentSlide].classList.remove('active');
+                    dots[currentSlide].classList.remove('active');
+
+                    currentSlide = index;
+
+                    slides[currentSlide].classList.add('active');
+                    dots[currentSlide].classList.add('active');
+                }
+            });
+        });
+
+        // Auto-play every 4 seconds
+        const carouselInterval = setInterval(nextSlide, 4000);
+
+        // Pause auto-play on hover
+        const carousel = document.querySelector('.image-carousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(carouselInterval);
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                setInterval(nextSlide, 4000);
+            });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const carousel = document.querySelector('.image-carousel');
+            if (carousel && (carousel.matches(':hover') || document.activeElement?.closest('.image-carousel'))) {
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    slides[currentSlide].classList.remove('active');
+                    dots[currentSlide].classList.remove('active');
+
+                    if (e.key === 'ArrowRight') {
+                        currentSlide = (currentSlide + 1) % slides.length;
+                    } else {
+                        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    }
+
+                    slides[currentSlide].classList.add('active');
+                    dots[currentSlide].classList.add('active');
+                }
+            }
+        });
+    }
+
+    // Initialize carousel
+    initCarousel();
+
     // Initialize all components
     console.log('Mido Fortified Food website initialized successfully');
 });

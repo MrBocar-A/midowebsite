@@ -1,0 +1,46 @@
+# Robots.txt pour Mido Fortified Food
+# https://votre-domaine-vercel.vercel.app/robots.txt
+
+User-agent: *
+Allow: /
+
+# Interdire l'accès aux fichiers système
+Disallow: /.*
+Disallow: /*.json$
+Disallow: /*.txt$
+Disallow: /README.md
+
+# Autoriser spécifiquement les ressources importantes
+Allow: /logomido.jpg
+Allow: /styles.css
+Allow: /script.js
+Allow: /favicon.ico
+Allow: /sitemap.xml
+
+# Sitemap
+Sitemap: https://votre-domaine-vercel.vercel.app/sitemap.xml
+
+# Instructions spécifiques pour les principaux moteurs de recherche
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Bloquer les bots malveillants
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /

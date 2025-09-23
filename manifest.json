@@ -1,0 +1,17 @@
+{
+    "name": "Mido Fortified Food",
+    "short_name": "Mido",
+    "description": "Aliments enrichis pour lutter contre la malnutrition au Burundi",
+    "icons": [
+        {
+            "src": "logomido.jpg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#196444",
+    "theme_color": "#8ab33d",
+    "lang": "fr"
+}
